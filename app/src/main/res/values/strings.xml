@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GithubSearcher</string>
+    <string name="no_data_string">No result found.</string>
+    <string name="error_string">Error when call.</string>
+    <string name="search_button_string">Search</string>
+    <string name="search_place_holder">Username</string>
+    <string name="empty_user_name_error">Username must be filled!</string>
+    <string name="username_query">%1$s in:login</string>
+</resources>
