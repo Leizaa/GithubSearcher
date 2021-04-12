@@ -20,6 +20,7 @@ interface ContractInterface {
         fun addPagingProgressBar()
         fun removePagingProgressBar()
         fun showToast(message: String)
+        fun showMainRecyclerView()
     }
 
     interface Presenter {

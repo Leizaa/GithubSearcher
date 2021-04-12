@@ -75,21 +75,24 @@ class MainActivityPresenter(private var view: View, private val context: Activit
                 } else {
                     val errorJson = JSONObject(response.errorBody()!!.string())
                     Log.v("GET", "failed: $errorJson")
-                    view.processErrorCall()
+                    processFailedCall(errorJson.get("message").toString())
                 }
             }
 
             override fun onFailure(call: Call<ResultData>, t: Throwable) {
-
-                if(page != 1) {
-                    haveMoreData = false
-                    view.removePagingProgressBar()
-                    view.showToast(t.message.toString())
-                } else {
-                    view.processErrorCall()
-                }
+                processFailedCall(t.message.toString())
             }
         })
+    }
+
+    private fun processFailedCall(message: String) {
+        if(page != 1) {
+            haveMoreData = false
+            view.removePagingProgressBar()
+            view.showToast(message)
+        } else {
+            view.processErrorCall()
+        }
     }
 
     override fun getNextPage() {
@@ -107,6 +110,7 @@ class MainActivityPresenter(private var view: View, private val context: Activit
     }
 
     private fun processDataResponse(response: Response<ResultData>) {
+        view.showMainRecyclerView()
         if(page == 1) {
             processFirstPage(response)
         } else {
