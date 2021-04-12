@@ -11,9 +11,9 @@
         android:id="@+id/search_linear_layout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/default_margin"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/search_bar_size"
         android:weightSum="1">
 
         <EditText
@@ -48,8 +48,8 @@
         app:layout_constraintTop_toBottomOf="@id/search_linear_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
         android:paddingBottom="?attr/actionBarSize"
         />
 
@@ -82,7 +82,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/progress_bar_size"
             android:layout_width="0dp"
             app:layout_constraintDimensionRatio="1:1"/>
 

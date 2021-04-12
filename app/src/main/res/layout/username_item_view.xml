@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="@dimen/recycler_item_height"
     android:background="@drawable/username_item_background">
 
     <ImageView
         android:id="@+id/user_image_view"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
         android:layout_gravity="center"
         android:scaleType="centerInside"
         android:src="@drawable/default_image"/>
@@ -18,9 +18,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/recyler_item_text_margin"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size"
         tools:text="Username Temp" />
 
 </LinearLayout>
