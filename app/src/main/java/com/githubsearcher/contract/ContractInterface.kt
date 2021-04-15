@@ -32,8 +32,4 @@ interface ContractInterface {
         fun addLoading()
         fun removeLoading()
     }
-
-    interface Model {
-
-    }
 }

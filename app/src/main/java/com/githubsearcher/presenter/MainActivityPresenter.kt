@@ -64,17 +64,12 @@ class MainActivityPresenter(private var view: View, private val context: Activit
         val request = GithubServiceBuilder.buildService(GithubService::class.java)
         val call = request.getUsernameList(searchString, 30,page)
 
-        Log.v("GET", "begin search: $searchString")
         call.enqueue(object : Callback<ResultData> {
             override fun onResponse(call: Call<ResultData>, response: Response<ResultData>) {
                 if (response.isSuccessful) {
-                    Log.v("GET", "url: " + response.raw().request().url())
-                    Log.v("GET", "result: " + response.body().toString())
                     preProcessResponse(response)
-
                 } else {
                     val errorJson = JSONObject(response.errorBody()!!.string())
-                    Log.v("GET", "failed: $errorJson")
                     processFailedCall(errorJson.get("message").toString())
                 }
             }
