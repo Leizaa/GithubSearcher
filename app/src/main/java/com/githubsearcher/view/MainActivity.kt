@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity(), ContractInterface.View {
     }
 
     override fun showToast(message: String) {
-        Toast.makeText(this@MainActivity,message,Toast.LENGTH_SHORT)
+        Toast.makeText(this@MainActivity,message,Toast.LENGTH_LONG)
     }
 
     override fun showMainRecyclerView() {
